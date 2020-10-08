@@ -23,6 +23,10 @@ export const MESSAGE = {
 };
 export const PATH = {
   HOME: 'home',
+  VENDAS: {
+    TITLE: 'vendas',
+    PROPOSTA: 'proposta'
+  },
   ACAO: {
     ADD: 'cadastrar',
     EDIT: ':id/editar',

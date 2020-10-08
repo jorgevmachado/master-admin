@@ -11,7 +11,7 @@
     <mat-sidenav-content>
       <div class="content">
         <mat-toolbar color="primary">
-          <button type="button" mat-button *ngIf="displayNav">
+          <button type="button" mat-button (click)="toggleMenu()" *ngIf="displayNav">
             <mat-icon>menu</mat-icon>
           </button>
           <span style="flex: 1 1 auto;"></span>

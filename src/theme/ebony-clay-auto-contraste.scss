@@ -18,8 +18,6 @@
       $app-toolbaraccent,
       $app-toolbarwarn);
 
-  @include mat-toolbar-theme($app-toolbartheme);
-
   // Sidebar
   .mat-sidenav {
     min-height: 100%;

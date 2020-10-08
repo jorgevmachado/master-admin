@@ -1,1 +1,32 @@
-<p>sidebar works!</p>
+<div class="app-sidebar-container">
+  <div class="app-sidebar-header"></div>
+  <mat-nav-list class="app-sidebar-menu-container">
+    <div *ngFor="let item of sidebarNavItems">
+      <mat-list-item [routerLink]="item.routerLink" [routerLinkActive]="'active'" *ngIf="!item.children">
+        <mat-icon>{{item.icon}}</mat-icon>
+        <a>{{item.title}}</a>
+      </mat-list-item>
+      <mat-expansion-panel *ngIf="item.children">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>{{item.icon}}</mat-icon>
+            <p>{{item.title}}</p>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <div *ngFor="let item of item.children">
+            <mat-list-item [routerLink]="item.routerLink" [routerLinkActive]="'active'" *ngIf="!item.children">
+              <mat-icon>{{item.icon}}</mat-icon>
+              <a>{{item.title}}</a>
+            </mat-list-item>
+          </div>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </div>
+    <mat-list-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <a>Sair</a>
+    </mat-list-item>
+  </mat-nav-list>
+</div>
+

@@ -11,6 +11,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/home/home.module').then(module => module.HomeModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: PATH.VENDAS.TITLE,
+    loadChildren: () => import('./modules/vendas/vendas.module').then(module => module.VendasModule),
+    canActivate: [AuthGuard]
+  },
   { path: '', redirectTo: PATH.HOME, pathMatch: 'full', canActivate: [AuthGuard]},
   {path: '**', component: NotFoundComponent}
 ];
